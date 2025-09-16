@@ -40,8 +40,8 @@ jobs:
       - name: Copy environment file
         run: cp .env.example .env
 
-      - name: Generate app key
-        run: php artisan key:generate
+      - name: Set APP_KEY from GitHub Secrets # cambiado
+        run: echo "APP_KEY=${{ secrets.APP_KEY }}" >> .env
 
       - name: Clear config cache
         run: php artisan config:clear
