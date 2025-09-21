@@ -65,7 +65,17 @@ class Usuario extends Authenticatable
         return $this->rol ==='admin';
     }
 
+    /* 'accesor' en el modelo para rol,reutilizable ->get{NombreDelAtributo}Attribute
+      llamar con el atributo 'rol'_(nombre funcion'formatted')_>snakecase*/
+    public function getRolFormattedAttribute(){
+        $map=['usuario' =>  'ADOPTANTE',
+              'admin'   =>  'ADMINISTRADOR',
+              'coord'   =>  'COORDINADOR'];
+        return $map[$this->rol]; 
+        /*??strtoupper($this->rol)*/
+    }
 
+    /* realciones cardinalidad */
     public function adopciones():HasMany{
     
         return $this->hasMany(Mascota::class,'id_usuario');

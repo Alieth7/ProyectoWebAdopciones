@@ -49,6 +49,8 @@
                 <h5 class="card-title">
                     Simple Datatable
                 </h5>
+                <!--Modificado para que abra en nueva pestania y el controllador previsualice-->
+                <a href="{{ route('exportar.pdf') }}" class="btn btn-info" target="_blank">Exportar a PDF</a>
             </div>
             <div class="card-body">
 <table class="table table-striped" id="table1">
@@ -72,7 +74,7 @@
             <tr>
                 <td>{{$usuario->nombre_usuario}}</td>
                 <td>{{$usuario->email}}</td>
-                <td>{{$usuario->rol}}</td>
+                <td>{{$usuario->rol_formatted}}</td>
                 <td>{{$usuario->nombres}}</td>
                 <td>{{$usuario->ap_paterno}}</td>
                 <td>{{$usuario->ap_materno}}</td>

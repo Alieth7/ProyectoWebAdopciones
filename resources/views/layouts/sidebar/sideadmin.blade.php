@@ -120,7 +120,7 @@
                     
                     <li class="submenu-item  ">
                         @if(auth()->user()->rol==='admin')
-                        <a href="{{route('pendientes')}}" class="submenu-link">
+                        <a href="#" class="submenu-link">
                             <i class="bi bi-"></i>
                             <span>Pendientes</span>
                         </a>
@@ -129,7 +129,7 @@
 
                     <li class="submenu-item">
                         @if(auth()->user()->rol==='admin')
-                        <a href="{{route('aprobadas')}}" class="submenu-link">
+                        <a href="#" class="submenu-link">
                             <i class="bi bi-"></i>
                             <span>Aprobadas</span>
                         </a>
@@ -138,7 +138,7 @@
 
                     <li class="submenu-item">
                         @if(auth()->user()->rol==='admin')
-                        <a href="{{route('rechazadas')}}" class="submenu-link">
+                        <a href="#" class="submenu-link">
                             <i class="bi bi-"></i>
                             <span>Rechazadas</span>
                         </a>

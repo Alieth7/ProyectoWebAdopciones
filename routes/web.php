@@ -5,6 +5,9 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\PecheraController;
 
+use App\Http\Controllers\ExportarController;
+
+
 use App\Http\Controllers\Controller;
 
 /*no olvidar indexar los controladores que usemos*/
@@ -44,11 +47,18 @@ Route::middleware(['auth','rol:admin'])->group(function(){
         return view('admin.dashboard');
     })->name('admin.dashboard'); //alias a toda la ruta
 
+    /**Rutas de cruds*/
     Route::resource('usuarios', UsuarioController::class);
     Route::resource('mascota', MascotaController::class);
     Route::resource('pechera',PecheraController::class);
 
+    /**Rutas de reportes*/
+    Route::get('/exportar/pdf',[ExportarController::class,'exportarPDF'])->name('exportar.pdf');
+
+    
+
     });
+    
 
 /*ruta para usuario coordinador 'trabajador'*/
 Route::middleware(['auth','rol:coord'])->group(function(){
