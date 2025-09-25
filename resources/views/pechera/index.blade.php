@@ -46,6 +46,7 @@
                 <h5 class="card-title">
                     Simple Datatable
                 </h5>
+                <a href="{{route('exportar.pecheras.pdf')}}" class="btn btn-info" target="_blank">Exportar a PDF</a>
             </div>
             <div class="card-body">
 
@@ -63,7 +64,7 @@
                 @foreach ($pecheras as $pechera)
                     <tr>
                         <td>{{$pechera->codigo}}</td>
-                        <td>{{$pechera->estado}}</td>
+                        <td>{{$pechera->estado_formatted}}</td>
                         <td>
                             <a href="{{route('pechera.edit',$pechera)}}" class="btn icon icon-left btn-primary"> <i data-feather="edit"> </i>Editar </a>
 

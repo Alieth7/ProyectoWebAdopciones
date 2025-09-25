@@ -1,4 +1,3 @@
-resources/views/exports/users-pdf.blade.php
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,9 +27,13 @@ resources/views/exports/users-pdf.blade.php
         border-collapse: collapse;
         margin: 10px 0;
         }
+        th{
+            background-color:cadetblue;
+        }
         td, th {
         border: 1px solid #ccc;
         padding: 6px;
+        text-align: center;
         }
      </style>
 

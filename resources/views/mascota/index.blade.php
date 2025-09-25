@@ -3,7 +3,7 @@
 @section('sidebar')
     @include('layouts.sidebar.sideadmin')
 @endsection
-
+ 
 @section('contenido')
 
 <!--desde aca pdf-->
@@ -47,6 +47,7 @@
                 <h5 class="card-title">
                     Simple Datatable
                 </h5>
+                <a href="{{route('exportar.mascotas.pdf')}}" class="btn btn-info" target="_blank">Exportar a PDF</a>
             </div>
             <div class="card-body">
 
@@ -62,6 +63,8 @@
             <th>Cuidado especial</th>
             <th>Comportamiento</th>
             <th>Foto</th>
+            <th>Estado</th>
+            <th>Raza</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -74,11 +77,11 @@
                 <td>{{$mascota->color}}</td>
                 <td>{{$mascota->peso}}</td>
                 <td>{{$mascota->tamanio}}</td>
-                <td>{{$mascota->esterilizado}}</td>
+                <td>{{$mascota->esterilizado ? 'Si' : 'No'}}</td>
                 <td>{{$mascota->cuidado_especial}}</td>
                 <td>{{$mascota->comportamiento}}</td>
                 <td>{{$mascota->url_foto}}</td>
-                <td>{{$mascota->estado}}</td>
+                <td>{{$mascota->estado_formatted}}</td>
                 <!--  <td>{{$mascota->id_raza}}</td> en lugar de esto para una tabla relacionada:-->
                 <td>{{$mascota->razas->nombre}}</td>
                 <!--esto devuelve directamente el nombre,eloquent devuelve el MODELO($mascota->raza()devuelve la relacion) y luego un atributo,

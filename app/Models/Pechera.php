@@ -20,6 +20,13 @@ class Pechera extends Model
     protected $table='pecheras';
     protected $fillable=['codigo','estado'];
 
+    public function getEstadoFormattedAttribute(){
+        $map =['disponible' => 'Disponible',
+                'asignada' => 'Asignada',
+                'en_reparacion' => 'En reparacion'];
+        return $map[$this->estado];
+    }
+
     
     public function periodo_pruebas():BelongsToMany{
         return $this->belongsToMany(PeriodoPrueba::class,'pechera_periodos','id_pechera','id_periodo')

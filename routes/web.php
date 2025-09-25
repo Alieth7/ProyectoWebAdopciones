@@ -53,9 +53,9 @@ Route::middleware(['auth','rol:admin'])->group(function(){
     Route::resource('pechera',PecheraController::class);
 
     /**Rutas de reportes*/
-    Route::get('/exportar/pdf',[ExportarController::class,'exportarPDF'])->name('exportar.pdf');
-
-    
+    Route::get('/exportar/usuarios/pdf',[ExportarController::class,'exportarPdfUsuarios'])->name('exportar.usuarios.pdf');
+    Route::get('/exportar/mascotas/pdf',[ExportarController::class,'exportarPdfMascotas'])->name('exportar.mascotas.pdf');
+    Route::get('/exportar/pecheras/pdf',[ExportarController::class,'exportarPdfPecheras'])->name('exportar.pecheras.pdf');
 
     });
     
