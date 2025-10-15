@@ -32,6 +32,16 @@ class Mascota extends Model
                          'estado',
                          'eliminado',
                          'id_raza'];
+
+
+    public function getEstadoFormattedAttribute(){
+        $map = ['disponible'=> 'Disponible',
+                'no_disponible' => 'No disponible',
+                'en_tratamiento'=> 'En tratamiento',
+                'en_proceso'   => 'En proceso de adopcion',
+                'adoptado'      => 'Adoptado'];
+        return $map[$this->estado];
+    }
     
    /* relacion con vacunas   -    la otra tabla--nom de tabla pivote-nom fk de tabla actual-nom fk tabla externa
     public function vacunas():BelongsToMany{
